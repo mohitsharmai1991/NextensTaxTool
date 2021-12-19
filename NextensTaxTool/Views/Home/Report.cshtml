@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Report Page";
+}
+
+<h1>Report Data - </h1>
+<br />
+
+@foreach (var Report in @Model)
+{
+    <hr />
+    <hr />
+    <h3>Client Id - @Report.ClientId</h3>
+    <hr />
+
+    @if (@Report.WealthTaxViewModel != null)
+    {
+        <h4>Wealth Tax Indicator : </h4>
+        <h6>TotalCapital - @Report.WealthTaxViewModel.TotalCapital</h6>
+    }
+
+    @if (@Report.PropertyValueViewModel != null)
+    {
+        <h4>Real estate / property value growth indicator</h4>
+        <h6>PercentageGainOverLastThreeYears - @Report.PropertyValueViewModel.PercentageGainOverLastThreeYears</h6>
+        <h6>TotalValue - @Report.PropertyValueViewModel.TotalValue</h6>
+    }
+
+    @if (@Report.IncomeViewModel != null)
+    {
+        <h4>Income volatility indicator</h4>
+        <h6>Year - @Report.IncomeViewModel.Year</h6>
+        <h6>PreviousYear - @Report.IncomeViewModel.PreviousYear</h6>
+        <h6>Income - @Report.IncomeViewModel.Income</h6>
+        <h6>PercentageChange - @Report.IncomeViewModel.PercentageChange</h6>
+    }
+
+}
+

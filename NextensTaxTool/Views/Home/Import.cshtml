@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "IMport Page";
+}
+
+<div class="text-center">
+
+    @if(ViewBag.Result){
+    <h1 class="display-4">Import successful.</h1>
+    }else{
+    <h1 class="display-4">Some or all of the files are failed to Import. Please debug for exception.</h1>
+    }
+</div>
